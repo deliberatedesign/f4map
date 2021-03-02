@@ -80,7 +80,7 @@
                 var s = e("underscore"),
                     u = e("jquery"),
                     c = e("browser-detect"),
-                    l = e("./config.json"),
+                    l = e("config.json"),
                     f = e("./ServerUrls"),
                     p = n,
                     h = 5,
@@ -98,7 +98,7 @@
                             });
                     });
             },
-            { "./config.json": 2, "./ServerUrls": 8, "browser-detect": 22, jquery: 70, underscore: 169 },
+            { "config.json": 2, "./ServerUrls": 8, "browser-detect": 22, jquery: 70, underscore: 169 },
         ],
         2: [
             function (e, t, n) {
@@ -754,7 +754,7 @@
                         y = e("./Analytics"),
                         v = e("underscore");
                     v.str = e("underscore.string");
-                    var b = e("./config.json");
+                    var b = e("config.json");
                     u.parallel([v.partial(c.init, p), f.load], o);
                 }
                 function a() {
@@ -778,7 +778,7 @@
             },
             {
                 "./Analytics": 1,
-                "./config.json": 2,
+                "config.json": 2,
                 "./Menu": 6,
                 "./SearchManager": 7,
                 "./ServerUrls": 8,
