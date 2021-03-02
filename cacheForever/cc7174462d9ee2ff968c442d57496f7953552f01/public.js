@@ -6893,7 +6893,7 @@
                     var r = e.language,
                         i = { fallbackLng: r, lng: r };
                     s.extend(i, c.i18next);
-                    var o = "translation",
+                    var o = "",
                         a = e.namespace || o;
                     a == o ? (i.ns = o) : ((i.ns = { namespaces: [a, o], defaultNs: a }), (i.fallbackNS = [o])),
                         u.init(i, function (e) {
@@ -18285,7 +18285,7 @@
         ],
         178: [
             function (e, t, n) {
-                t.exports = { i18next: { resGetPath: "/static/i18n/__ns__.__lng__.json" } };
+                t.exports = { i18next: { resGetPath: "static/i18n/__ns__.__lng__.json" } };
             },
             {},
         ],
