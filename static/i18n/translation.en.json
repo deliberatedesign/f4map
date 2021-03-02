@@ -1,0 +1,50 @@
+{
+    "title": "F4map Demo - Interactive 3D map",
+    "description": "F4 Map is a WebGL 3D Map Viewer based on OpenStreetMap data",
+    "subtitle": "Demo version",
+
+    "search_placeholder": "Search a place...",
+
+    "menu_displayOurSolution": "Discover our solutions",
+    "menu_displayOptions": "Graphic options",
+    "menu_Affichage": "Display",
+    "menu_editOSM": "Edit via OSM",
+    "menu_editWiki": "Edit our Wiki",
+    "menu_contact": "Contact us",
+    "menu_toggleInterface": "i to toggle interface",
+
+    "contact_form_title": "Contact us",
+    "contact_form_user_name": "Last name – First name or Company (required)",
+    "contact_form_user_name_label": "Name or compagny *",
+    "contact_form_user_mail": "E-mail (required)",
+    "contact_form_user_mail_label": "E-mail *",
+    "contact_form_mail_subject": "Object",
+    "contact_form_mail_subject_label": "Object",
+    "contact_form_mail_content": "Message (required)",
+    "contact_form_mail_content_label": "Message *",
+    "contact_form_btn_submit": "Send",
+    "contact_form_feedback_succes": "Thank you for you're interest. We'll be in touch soon.",
+    "contact_form_feedback_error": "Sorry, an error has occured, please check if all required fields are filled.",
+
+    "index_logo_secondLine": "Connecting people with maps",
+
+    "index_noWebGL_title": "Oops!",
+    "index_noWebGL_content": "Unfortunately, your browser does not allow WebGL. You will not be able to enjoy our map 3D features.",
+    "index_noWebGL_continueButton": "Click here to go to the standard version.",
+    "index_noWebGL_link": "For more information on WebGL, click here.",
+
+    "no_result": "No result",
+
+    "notification_title": "You're currently on a demo server.",
+    "notification_text": "You may encounter slowdowns in your navigation when many users are connected.",
+    "notification_link": "To learn more about our solutions, please click here.",
+    "displayOptions_shadow": "Dynamic shadows",
+    "displayOptions_ssao": "SSAO",
+    "displayOptions_ssaoWhenMoving": "Render SSAO when moving",
+    "displayOptions_useDevicePixelRatio": "Match device pixel ratio",
+    "displayOptions_waterReflection": "Real time water reflection",
+    "displayOptions_name": "Buildings names",
+    "displayOptions_urbanDetails": "Urban details (wall, chimney, power lines, street lamps...)",
+    "displayOptions_naturalDetails": "Natural details (forest, fountain...)",
+    "displayOptions_specialBuildings": "F4 specific buildings"
+}

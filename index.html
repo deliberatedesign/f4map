@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>F4map Demo - Interactive 3D map</title>
+        <link rel="icon" type="image/png" href="cacheForever/7c9b8dc1271ef66637eb7ff76f58db6b3b8484c5/images/f4_favicon.png" />
+        <link rel="icon" type="image/svg+xml" sizes="any" href="cacheForever/9a6161a0768b8fda8abbc1d4283c0eb7e4f81408/images/f4.svg" />
+        <meta name="google" content="notranslate" />
+        <meta name="description" content="F4 Map is a WebGL 3D Map Viewer based on OpenStreetMap data" />
+        <meta property="og:description" content="F4 Map is a WebGL 3D Map Viewer based on OpenStreetMap data" />
+        <meta property="og:image" content="/cacheForever/e6ee4c271b3e8842481659f714f6337410ddde6a/images/ogMapPreview.jpg" />
+        <meta property="og:title" content="F4map Demo - Interactive 3D map" />
+        <meta property="og:site_name" content="F4map Demo - Interactive 3D map" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://demo.f4map.com" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="canonical" href="index.html" />
+        <link rel="stylesheet" href="cacheForever/3e3afcc5896841e983e6e41cb9c24c9e812d10f2/css/private.css" type="text/css" />
+        <script>
+            (function (_, e, rr, s) {
+                _errs = [s];
+                var c = _.onerror;
+                _.onerror = function () {
+                    var a = arguments;
+                    _errs.push(a);
+                    c && c.apply(this, a);
+                };
+                var b = function () {
+                    var c = e.createElement(rr),
+                        b = e.getElementsByTagName(rr)[0];
+                    c.src = "//beacon.errorception.com/" + s + ".js";
+                    c.async = !0;
+                    b.parentNode.insertBefore(c, b);
+                };
+                _.addEventListener ? _.addEventListener("load", b, !1) : _.attachEvent("onload", b);
+            })(window, document, "script", "55cdeb76396492340a000e35");
+        </script>
+    </head>
+    <body>
+        <div class="interstice">
+            <div class="interstice_background">
+                <div class="interstice_content">
+                    <div class="interstice_logo"></div>
+                    <div class="interstice_name"></div>
+                    <div class="interstice_location"></div>
+                </div>
+            </div>
+        </div>
+        <a href="https://www.f4map.com/" target="_blank" class="inHeaderOurSolution"><i class="fa fa-arrow-circle-right"></i>&nbsp;Discover our solutions</a>
+        <div title="i to toggle interface" class="logoImg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2125.984 1771.653">
+                <title>F4</title>
+                <path d="M137.428 869.84L994.65 220.543l662.757-79.173 229.662 1028.87-108.752 216.147-287.148-95.7-58.934 83.321-378.886-112.724-275.217 337.98-212.625-105.002z" stroke="#000" />
+                <path d="M137.043 870.337L992 221.653l666-80 228 1030-108 216-290-98-54 86-378-112-276 332-218-100z" fill="none" />
+                <path d="M224.381 903.492l165.357 16.535 361.151 606.935-164.14-65.506zm527.866-270.545L1158.8 648.35l185.703 466.536z" fill="#bbdef2" />
+                <path d="M418.917 914.066l317.765-276.13 295.99 579.224-266.744 299.7zm333.33-281.126l592.249 481.937 79.39 199.167-363.195-97.063zm751.901 629.571l158.824-249.728 91.502 317.611z" fill="#1757a1" />
+                <path d="M1175.11 637.797l145.124-143.15 166.64 452.408 123.412-160.794-132.054-463.55 133.411-134.75 241.699 982.025-87.495 146.455-100.04-348.89-233.254 331.994z" fill="#619fd0" />
+                <path d="M912.396 469.707l131.192-114.62 422.19-28.922 135.395 454.002-114.421 147.895-166.59-450.101z" fill="#022e5f" />
+                <path d="M220.316 882.636l788.204-625.754 588.219-66.258-127.683 126.732-428.07 31.523L899.28 474.347l413.608 10.383-146.658 146.364-431.413-12.395-339.463 280.316z" fill="#fff" />
+            </svg>
+        </div>
+        <div id="headerDepth"></div>
+        <header>
+            <div id="header">
+                <div title="i to toggle interface" class="logoImg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2125.984 1771.653">
+                        <title>F4</title>
+                        <path d="M137.428 869.84L994.65 220.543l662.757-79.173 229.662 1028.87-108.752 216.147-287.148-95.7-58.934 83.321-378.886-112.724-275.217 337.98-212.625-105.002z" stroke="#000" />
+                        <path d="M137.043 870.337L992 221.653l666-80 228 1030-108 216-290-98-54 86-378-112-276 332-218-100z" fill="none" />
+                        <path d="M224.381 903.492l165.357 16.535 361.151 606.935-164.14-65.506zm527.866-270.545L1158.8 648.35l185.703 466.536z" fill="#bbdef2" />
+                        <path d="M418.917 914.066l317.765-276.13 295.99 579.224-266.744 299.7zm333.33-281.126l592.249 481.937 79.39 199.167-363.195-97.063zm751.901 629.571l158.824-249.728 91.502 317.611z" fill="#1757a1" />
+                        <path d="M1175.11 637.797l145.124-143.15 166.64 452.408 123.412-160.794-132.054-463.55 133.411-134.75 241.699 982.025-87.495 146.455-100.04-348.89-233.254 331.994z" fill="#619fd0" />
+                        <path d="M912.396 469.707l131.192-114.62 422.19-28.922 135.395 454.002-114.421 147.895-166.59-450.101z" fill="#022e5f" />
+                        <path d="M220.316 882.636l788.204-625.754 588.219-66.258-127.683 126.732-428.07 31.523L899.28 474.347l413.608 10.383-146.658 146.364-431.413-12.395-339.463 280.316z" fill="#fff" />
+                    </svg>
+                </div>
+                <div id="searchBox">
+                    <div id="searchInputContainer"><input id="searchInput" type="text" placeholder="Search a place..." tabindex="1" /></div>
+                    <button id="searchButton" title="Search"><i class="fa fa-search"></i></button>
+                </div>
+                <nav id="menu" class="dropdown">
+                    <button id="dLabel" data-toggle="dropdown" class="menuButton dropdown-toggle"><i class="fa fa-bars"></i></button>
+                    <div id="menuDropdown" aria-labelledby="dLabel" class="dropdown-menu">
+                        <a id="openFearturesDemo"><i class="fa fa-cog"></i>Graphic options</a><a id="editOSM"><i class="fa fa-pencil"></i>&nbsp;Edit via OSM</a><a id="editWiki"><i class="fa fa-book"></i>&nbsp;Edit our Wiki</a>
+                        <a id="contact"><i class="fa fa-pencil-square-o"></i>&nbsp;Contact us</a>
+                    </div>
+                </nav>
+                <div class="elementsContainer">
+                    <div id="searchResults" style="display: none;">
+                        <button class="searchResultsCloseButton"><i class="fa fa-times"></i></button><button id="searchResultsHideButton"><i class="fa fa-caret-left"></i></button>
+                        <button id="searchResultsShowButton" style="display: none;"><i class="fa fa-caret-right"></i></button>
+                        <section id="searchResultsTable">
+                            <div id="searchResultsHeaderRow"><div id="searchResultsHeader"></div></div>
+                            <div id="searchResultsMainRow">
+                                <div id="searchResultsMain">
+                                    <ul id="searchResultsList"></ul>
+                                    <div id="noResult">No result</div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="featuresDemo">
+                        <div class="featuresDemoHeader">
+                            <span class="featuresDemoHeaderTitle">Graphic options</span>
+                            <div id="closeFeaturesDemo"><i class="fa fa-times"></i></div>
+                        </div>
+                        <div class="featuresDemoTabMenu"></div>
+                        <div class="featuresDemoContainer">
+                            <div id="blocMenuGraphicOptions" class="blocMenu">
+                                <div id="ElevationSelector" class="featuresDemoBloc">
+                                    <h4>Ground elevations</h4>
+                                    <div id="toggleElevation" class="featureBtn"><div class="wheatherIcon"></div></div>
+                                </div>
+                                <div id="blocMenu2" class="blocMenu">
+                                    <div id="weatherSelector" class="featuresDemoBloc">
+                                        <h4>Weather</h4>
+                                        <div id="liveWeather" class="featureBtn active">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Live
+                                        </div>
+                                        <div id="sun" data-value="sun" class="featureBtn">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Sun
+                                        </div>
+                                        <div id="rain" data-value="rain" class="featureBtn">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Rain
+                                        </div>
+                                        <div id="snow" data-value="snow" class="featureBtn">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Snows
+                                        </div>
+                                    </div>
+                                    <div id="timeSelector" class="featuresDemoBloc">
+                                        <h4>Time (current date)</h4>
+                                        <div id="resetTime" class="featureBtn active">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Live
+                                        </div>
+                                        <div data-value="nightEnd" class="featureBtn timeChange">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Night
+                                        </div>
+                                        <div data-value="goldenHourEnd" class="featureBtn timeChange">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Morning
+                                        </div>
+                                        <div data-value="solarNoon" class="featureBtn timeChange">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Noon
+                                        </div>
+                                        <div data-value="goldenHour" class="featureBtn timeChange">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Evening
+                                        </div>
+                                    </div>
+                                    <div id="trafficSelector" class="featuresDemoBloc">
+                                        <h4>Traffic</h4>
+                                        <div id="toggleShips" class="featureBtn">
+                                            <div class="wheatherIcon"></div>
+                                            <br />
+                                            Ships
+                                        </div>
+                                    </div>
+                                </div>
+                                <h4>Display</h4>
+                                <div class="graphicOptions"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="mapsBlock">
+            <div class="mapsContainer">
+                <div class="gpsInterfaceContainerHeader">
+                    <div class="directionIcon"><i class="fa fa-arrow-up"></i></div>
+                    <div class="infoContainer">
+                        <div class="mainInfo">Rue halévy</div>
+                        <div class="nextInfo">vers&nbsp;<span>Rue Gluck</span></div>
+                    </div>
+                    <div class="speedInfo">50</div>
+                    <div class="specialInfo"><span></span></div>
+                </div>
+                <div class="changePointOfViewBtnContainer">
+                    <div class="changePointOfViewBtn2"><i class="fa fa-car"></i></div>
+                    <div class="changePointOfViewBtn1"><i class="fa fa-plane"></i></div>
+                </div>
+                <div class="gpsMyInfo">
+                    <div class="gpsInterfaceSpeed"><span>49</span>&nbsp;km/h</div>
+                    <div class="gpsInterfaceStats">
+                        <div class="arrivalTimeStat"><i class="fa fa-clock-o"></i><span>15h10</span></div>
+                        <div class="restTimeStat"><i class="fa fa-clock-o"></i><span class="arrivalTime">5min 29s</span></div>
+                        <div class="distStat"><i class="fa fa-clock-o"></i><span class="arrivalTime">7.8km</span></div>
+                    </div>
+                    <div id="startItinary"><i class="fa fa-play"></i></div>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="modal fade noWebGL">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" data-dismiss="modal" class="close">&times;</button>
+                    <h2>Oops!</h2>
+                    <p>Unfortunately, your browser does not allow WebGL. You will not be able to enjoy our map 3D features.</p>
+                    <div id="slideshow">
+                        <ul id="sContent">
+                            <li><img data-src="/cacheForever/e97bcdc589ba27a333a7951936094200d0dde1f1/images/slideshow/img1.jpg" /></li>
+                            <li><img data-src="/cacheForever/6efbff73ed24bf3f3b42acf1a678c04bebc3133c/images/slideshow/img2.jpg" /></li>
+                            <li><img data-src="/cacheForever/5d3fdaf12f46dcb0fbcef622f61508ddadd8d8e1/images/slideshow/img3.jpg" /></li>
+                        </ul>
+                    </div>
+                    <button type="button" data-dismiss="modal" class="btn btn-large btn-success">Click here to go to the standard version.</button><br />
+                    <br />
+                    <a href="https://get.webgl.org/">For more information on WebGL, click here.</a>
+                </div>
+            </div>
+        </div>
+        <div id="modalContactForm" role="dialog" style="display: none;" tabindex="-1" class="modal fade">
+            <div class="modal-content">
+                <div id="contactForm">
+                    <h2>Contact us</h2>
+                    <button class="closeModal"><i class="fa fa-times"></i></button><input id="user_name" type="text" name="user_name" required class="fieldInput requiredField" />
+                    <label for="user_name" placeholder="Name or compagny *" alt="Last name – First name or Company (required)"></label><input id="user_mail" type="email" name="user_mail" required class="fieldInput requiredField" />
+                    <label for="user_mail" placeholder="E-mail *" alt="E-mail (required)"></label><input id="mail_subject" type="text" name="mail_subject" required class="fieldInput" />
+                    <label for="mail_subject" placeholder="Object" alt="Object"></label><textarea id="mail_content" type="text" name="mail_content" required class="requiredField"></textarea>
+                    <label for="mail_content" placeholder="Message *" alt="Message (required)"></label><button class="btnFormSubmit">Send</button>
+                </div>
+                <div class="mailSuccess">Thank you for you're interest. We'll be in touch soon.</div>
+                <div class="mailError">Sorry, an error has occured, please check if all required fields are filled.</div>
+            </div>
+        </div>
+        <script src="https://core.f4map.com/api.js?api_key=W5TNB3QMLM785FCL03AK8BY7CUS384Z7ZK03Y1SY"></script>
+        <script src="cacheForever/06032840157ab014fa99bf51193b0172a4b09b8b/jscolor/jscolor.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(["_setAccount", "UA-38893365-5"]);
+            _gaq.push(["_trackPageview"]);
+            (function () {
+                var ga = document.createElement("script");
+                ga.type = "text/javascript";
+                ga.async = true;
+                ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script src="cacheForever/cc7174462d9ee2ff968c442d57496f7953552f01/public.js" crossorigin="anonymous"></script>
+    </body>
+</html>

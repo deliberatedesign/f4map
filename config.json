@@ -1,0 +1,15 @@
+{
+    "core": "//core.f4map.com",
+    "wiki": "//wiki.f4map.com",
+    "icon": "//icon.f4map.com",
+    "renderMode": "//f4map",
+    "googleAnalyticsId": "//UA-38893365-5",
+    "vhost": "//f4map.com",
+    "watcher": "//watcher.f4map.com",
+    "weather": "//weather.f4map.com",
+    "errorceptionProjectId": "//55cdeb76396492340a000e35",
+    "download": "//download.f4map.com",
+    "smtpHost": "//172.17.42.1",
+    "models": "//models.f4map.com",
+    "analytics": "//analytics.f4map.com"
+}
