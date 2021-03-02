@@ -479,7 +479,7 @@
             function (e, t, n) {
                 "use strict";
                 function r(e) {
-                    i.ajax("/config.json", {
+                    i.ajax("config.json", {
                         dataType: "json",
                         success: function (n) {
                             o.extend(t.exports, n), e(null);
